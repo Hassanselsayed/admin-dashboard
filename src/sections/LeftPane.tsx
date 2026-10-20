@@ -1,6 +1,8 @@
 import { FaGear } from "react-icons/fa6";
-import Tab from "../components/Tab";
 import { FaHome, FaProjectDiagram, FaUser } from "react-icons/fa";
+
+import Tab from "../components/Tab";
+import Initials from "../components/Initials";
 
 interface LeftPaneProps {
   activeTab: string;
@@ -32,7 +34,11 @@ export default function LeftPane({ activeTab }: LeftPaneProps) {
       </div>
 
       <div className="bottom">
-        <div className="bottom-left">JD</div>
+        <Initials
+          text="JD"
+          color="var(--black)"
+          backgroundColor="var(--light-blue)"
+        />
         <div className="bottom-right">
           <h3>Jane Doe</h3>
           <p>Admin</p>

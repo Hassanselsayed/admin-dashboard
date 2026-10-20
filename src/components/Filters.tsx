@@ -1,0 +1,33 @@
+interface FiltersProps {
+  inputValue: string;
+  setInputValue: Function;
+  selectValue: string;
+  setSelectValue: Function;
+}
+
+export default function Filters({
+  inputValue,
+  setInputValue,
+  selectValue,
+  setSelectValue,
+}: FiltersProps) {
+  function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setInputValue(e.target.value);
+  }
+
+  function handleSelectChange(e: React.ChangeEvent<HTMLSelectElement>) {
+    setSelectValue(e.target.value);
+  }
+
+  return (
+    <div className="filters">
+      <input type="search" value={inputValue} onChange={handleInputChange} />
+      <select value={selectValue} onChange={handleSelectChange}>
+        <option value="">All Statuses</option>
+        <option value="Active">Active</option>
+        <option value="Pending">Pending</option>
+        <option value="Suspended">Suspended</option>
+      </select>
+    </div>
+  );
+}

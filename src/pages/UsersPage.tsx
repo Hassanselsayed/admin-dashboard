@@ -1,43 +1,14 @@
-import { FaClock, FaUser, FaUsers } from "react-icons/fa6";
-import { MdBlock } from "react-icons/md";
-import UserBoard from "../components/UserBoard";
+import { useState } from "react";
+import { USER_BOARDS } from "../data/data";
 
-const USER_BOARDS = [
-  {
-    id: 1,
-    icon: FaUser,
-    iconColor: "var(--blue)",
-    iconBgColor: "var(--light-blue)",
-    text: "Total Users",
-    number: 20,
-  },
-  {
-    id: 2,
-    icon: FaUsers,
-    iconColor: "var(--green)",
-    iconBgColor: "var(--light-green)",
-    text: "Active Users",
-    number: 11,
-  },
-  {
-    id: 3,
-    icon: FaClock,
-    iconColor: "var(--orange)",
-    iconBgColor: "var(--light-orange)",
-    text: "Pending Users",
-    number: 4,
-  },
-  {
-    id: 4,
-    icon: MdBlock,
-    iconColor: "var(--red)",
-    iconBgColor: "var(--light-red)",
-    text: "Suspended Users",
-    number: 5,
-  },
-];
+import UserBoard from "../components/UserBoard";
+import Filters from "../components/Filters";
+import UsersTable from "../components/UsersTable";
 
 export default function UsersPage() {
+  const [inputValue, setInputValue] = useState("");
+  const [selectValue, setSelectValue] = useState("");
+
   return (
     <div className="users-page page">
       <h1>User Management</h1>
@@ -56,6 +27,16 @@ export default function UsersPage() {
           </li>
         ))}
       </ul>
+
+      <div className="user-table-wrap">
+        <Filters
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          selectValue={selectValue}
+          setSelectValue={setSelectValue}
+        />
+        <UsersTable inputValue={inputValue} selectValue={selectValue} />
+      </div>
     </div>
   );
 }

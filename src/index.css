@@ -48,6 +48,11 @@ li {
   list-style: none;
 }
 
+.initials {
+  padding: 10px;
+  border-radius: 50%;
+}
+
 .left-pane {
   color: var(--white);
   background-color: var(--dark-blue);
@@ -76,13 +81,6 @@ li {
   .bottom {
     display: flex;
     gap: 10px;
-  }
-
-  .bottom-left {
-    background-color: var(--light-blue);
-    padding: 10px;
-    border-radius: 50%;
-    color: var(--black);
   }
 }
 
