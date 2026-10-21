@@ -114,4 +114,9 @@ li {
       border-radius: 50%;
     }
   }
+
+  table {
+    border-spacing: 20px 10px;
+    text-align: left;
+  }
 }

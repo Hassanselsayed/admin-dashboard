@@ -8,6 +8,7 @@ import UsersTable from "../components/UsersTable";
 export default function UsersPage() {
   const [inputValue, setInputValue] = useState("");
   const [selectValue, setSelectValue] = useState("");
+  const [sortValue, setSortValue] = useState("");
 
   return (
     <div className="users-page page">
@@ -34,8 +35,14 @@ export default function UsersPage() {
           setInputValue={setInputValue}
           selectValue={selectValue}
           setSelectValue={setSelectValue}
+          sortValue={sortValue}
+          setSortValue={setSortValue}
         />
-        <UsersTable inputValue={inputValue} selectValue={selectValue} />
+        <UsersTable
+          inputValue={inputValue}
+          selectValue={selectValue}
+          sortValue={sortValue}
+        />
       </div>
     </div>
   );

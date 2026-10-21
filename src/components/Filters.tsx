@@ -3,6 +3,8 @@ interface FiltersProps {
   setInputValue: Function;
   selectValue: string;
   setSelectValue: Function;
+  sortValue: string;
+  setSortValue: Function;
 }
 
 export default function Filters({
@@ -10,6 +12,8 @@ export default function Filters({
   setInputValue,
   selectValue,
   setSelectValue,
+  sortValue,
+  setSortValue,
 }: FiltersProps) {
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     setInputValue(e.target.value);
@@ -17,6 +21,10 @@ export default function Filters({
 
   function handleSelectChange(e: React.ChangeEvent<HTMLSelectElement>) {
     setSelectValue(e.target.value);
+  }
+
+  function handleSortChange(e: React.ChangeEvent<HTMLSelectElement>) {
+    setSortValue(e.target.value);
   }
 
   return (
@@ -27,6 +35,12 @@ export default function Filters({
         <option value="Active">Active</option>
         <option value="Pending">Pending</option>
         <option value="Suspended">Suspended</option>
+      </select>
+      <select value={sortValue} onChange={handleSortChange}>
+        <option value="">Choose Sort</option>
+        <option value="name">Name</option>
+        <option value="email">Email</option>
+        <option value="created">Created Date</option>
       </select>
     </div>
   );

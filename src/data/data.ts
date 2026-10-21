@@ -11,14 +11,14 @@ export interface UserBoard {
   number: number
 }
 
-export interface User {
+export interface User extends Record<string,any> {
   id: string;
-name: string;
-email: string;
-role: string;
-status: string;
-created: string;
-lastActive: string;
+  name: string;
+  email: string;
+  role: string;
+  status: string;
+  created: string;
+  lastActive: string;
 }
 
 export const USER_BOARDS = [
@@ -68,21 +68,21 @@ export const USERS = [
   },
   {
     id: "2",
-    name: "Liam Patel",
-    email: "liam.patel@example.com",
-    role: "Manager",
-    status: "Active",
-    created: "Feb 03, 2025",
-    lastActive: "Sep 27, 2026"
-  },
-  {
-    id: "3",
     name: "Emma Wilson",
     email: "emma.wilson@example.com",
     role: "Member",
     status: "Active",
     created: "Feb 18, 2025",
     lastActive: "Sep 29, 2026"
+  },
+  {
+    id: "3",
+    name: "Liam Patel",
+    email: "liam.patel@example.com",
+    role: "Manager",
+    status: "Active",
+    created: "Feb 03, 2025",
+    lastActive: "Sep 27, 2026"
   },
   {
     id: "4",
@@ -95,21 +95,21 @@ export const USERS = [
   },
   {
     id: "5",
-    name: "Ava Thompson",
-    email: "ava.thompson@example.com",
-    role: "Manager",
-    status: "Active",
-    created: "Mar 14, 2025",
-    lastActive: "Sep 26, 2026"
-  },
-  {
-    id: "6",
     name: "Ethan Garcia",
     email: "ethan.garcia@example.com",
     role: "Member",
     status: "Suspended",
     created: "Mar 22, 2025",
     lastActive: "Jul 11, 2026"
+  },
+    {
+    id: "6",
+    name: "Ava Thompson",
+    email: "ava.thompson@example.com",
+    role: "Manager",
+    status: "Active",
+    created: "Mar 14, 2025",
+    lastActive: "Sep 26, 2026"
   },
   {
     id: "7",
